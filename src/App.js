@@ -21,7 +21,10 @@ class App extends React.Component {
           }
           this.setState({userData: allData})
         })
-        .catch(err => console.warn('Oh dear...', err))
+          .catch(err => {
+            this.setState({userData:[]})
+          console.warn('Oh dear...', err)
+        })
     })
   }
 
@@ -35,15 +38,19 @@ class App extends React.Component {
           <input type="submit" value="Submit"></input>
         </form>
         <h2>Username: {this.state.username}</h2>
-        <div id="data">
+        {this.state.userData.length> 0 && <>
+        <div id="data"> 
         <h2>Repositories</h2> 
         {this.state.userData.map((item, idx) => {
           return <div key={idx}>
             <h2>{idx}: {item.name}</h2>
             <hr/>
           </div>})}
-          
         </div>
+        </>}
+
+        {this.state.username.length > 0 && this.state.userData.length == 0 && <h2>GitHub User "{this.state.username}" does not exist!</h2>}
+        
       </>
     );
   }
