@@ -2,3 +2,12 @@
 body {
   font-family: "Poppins", sans-serif;
 }
+
+.icons{
+  display: flex;
+  align-items: center
+}
+
+.icons h4{
+  margin:15px
+}

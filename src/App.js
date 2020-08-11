@@ -48,11 +48,12 @@ class App extends React.Component {
               return (
                   <div key={idx}>
                       <h2>
-                          {idx}: {item.name}
+                          {idx+1}: {item.name}
                       </h2>
                       <div className="icons">
-                        <h4></h4>
-                      <h4><span><i className="fas fa-code-branch fa-lg"></i></span> {item.forks}</h4>
+                        <h4><span><i className="far fa-star fa-lg"></i></span> {item.stargazers}</h4>
+                        <h4><span><i className="fas fa-exclamation-circle fa-lg"></i></span> {item.issues}</h4>
+                        <h4><span><i className="fas fa-code-branch fa-lg"></i></span> {item.forks}</h4>
                       </div>
                       <button>
                           <a
