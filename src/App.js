@@ -34,9 +34,16 @@ class App extends React.Component {
           <input type="text" value={this.state.typing} onChange={this.handleChange}></input>
           <input type="submit" value="Submit"></input>
         </form>
-        <h2>Typing: {this.state.typing}</h2>
         <h2>Username: {this.state.username}</h2>
-
+        <div id="data">
+        <h2>Repositories</h2> 
+        {this.state.userData.map((item, idx) => {
+          return <div key={idx}>
+            <h2>{idx}: {item.name}</h2>
+            <hr/>
+          </div>})}
+          
+        </div>
       </>
     );
   }
