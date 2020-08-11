@@ -6,6 +6,7 @@ class App extends React.Component {
   handleSubmit = (event) => {
     event.preventDefault();
     this.setState({ username: this.state.typing }, () => {
+      this.setState({typing:""}) 
       let username= this.state.username
         const url = `https://api.github.com/users/${username}/repos`
         fetch(url)
@@ -17,6 +18,7 @@ class App extends React.Component {
             dataObj.name=repo.name;
             dataObj.stargazers=repo.stargazers_count;
             dataObj.forks=repo.forks_count;
+            dataObj.issues=repo.open_issues_count;
             allData.push(dataObj)
           }
           this.setState({userData: allData})
@@ -38,15 +40,33 @@ class App extends React.Component {
           <input type="submit" value="Submit"></input>
         </form>
         <h2>Username: {this.state.username}</h2>
-        {this.state.userData.length> 0 && <>
-        <div id="data"> 
-        <h2>Repositories</h2> 
-        {this.state.userData.map((item, idx) => {
-          return <div key={idx}>
-            <h2>{idx}: {item.name}</h2>
-            <hr/>
-          </div>})}
-        </div>
+        {this.state.userData.length > 0 && 
+        <>
+          <div id="data"> 
+            <h2>Repositories</h2> 
+            {this.state.userData.map((item, idx) => {
+              return (
+                  <div key={idx}>
+                      <h2>
+                          {idx}: {item.name}
+                      </h2>
+                      <div className="icons">
+                        <h4></h4>
+                      <h4><span><i className="fas fa-code-branch fa-lg"></i></span> {item.forks}</h4>
+                      </div>
+                      <button>
+                          <a
+                              target="_blank"
+                              href={`https://github.com/${this.state.username}/${item.name}`}
+                          >
+                              Go to Repo
+                          </a>
+                      </button>
+                      <hr />
+                  </div>
+              );
+            })}
+          </div>
         </>}
 
         {this.state.username.length > 0 && this.state.userData.length == 0 && <h2>GitHub User "{this.state.username}" does not exist!</h2>}
