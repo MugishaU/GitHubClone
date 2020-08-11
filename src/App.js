@@ -55,14 +55,14 @@ class App extends React.Component {
                         <h4><span><i className="fas fa-exclamation-circle fa-lg"></i></span> {item.issues}</h4>
                         <h4><span><i className="fas fa-code-branch fa-lg"></i></span> {item.forks}</h4>
                       </div>
-                      <button>
-                          <a
-                              target="_blank"
-                              href={`https://github.com/${this.state.username}/${item.name}`}
-                          >
-                              Go to Repo
-                          </a>
-                      </button>
+                        <a
+                            target="_blank"
+                            href={`https://github.com/${this.state.username}/${item.name}`}
+                        >
+                            <button>
+                                Go to Repo
+                            </button>
+                        </a>
                       <hr />
                   </div>
               );
