@@ -5,6 +5,8 @@
 A small app that fetches repos from a searched GitHub user.
 
 ## Run Instructions
+
+- Fork repo
 - Clone new repo to machine
 - In new repo run `npm install`
 - In new repo run `npm start`
