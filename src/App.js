@@ -35,17 +35,22 @@ class App extends React.Component {
   render() {
     return (
       <>
-        <h1>GitHub Clone</h1>
-        <form onSubmit={this.handleSubmit}>
-          <label>Enter GitHub Username </label>
-          <input
-            type="text"
-            value={this.state.typing}
-            onChange={this.handleChange}
-          ></input>
-          <input type="submit" value="Submit"></input>
-        </form>
-        <h2>Username: {this.state.username}</h2>
+        <header>
+          <h1>GitHub Clone</h1>
+          <form onSubmit={this.handleSubmit}>
+            <input
+              placeholder="GitHub Username"
+              required
+              id="textInput"
+              type="text"
+              value={this.state.typing}
+              onChange={this.handleChange}
+            ></input>
+            <input id="submit" type="submit" value="SUBMIT"></input>
+          </form>
+
+          <h2>Username: {this.state.username}</h2>
+        </header>
         {this.state.userData.length > 0 && (
           <>
             <div id="data">
@@ -92,7 +97,9 @@ class App extends React.Component {
         )}
 
         {this.state.username.length > 0 && this.state.userData.length == 0 && (
-          <h2>GitHub User "{this.state.username}" does not exist!</h2>
+          <h2 id="notFound">
+            GitHub User "{this.state.username}" does not exist!
+          </h2>
         )}
       </>
     );

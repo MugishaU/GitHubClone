@@ -3,22 +3,135 @@ body {
   font-family: "Poppins", sans-serif;
 }
 
+header,
+#notFound {
+  text-align: center;
+}
+
+#root {
+  width: 90vw;
+  margin: auto;
+}
+
 .icons {
   display: flex;
-  align-items: center;
+  justify-content: center;
 }
 
 .icons h4 {
   margin: 15px;
 }
 
+#textInput {
+  font-family: "Poppins", sans-serif;
+  font-size: 20px;
+  border: none;
+  box-sizing: border-box;
+  height: 45px;
+  border-radius: 45px 0 0 45px;
+  background-color: whitesmoke;
+  padding-left: 20px;
+  border: black solid 1px;
+}
+
+#submit {
+  cursor: pointer;
+  font-family: "Poppins", sans-serif;
+  font-size: 20px;
+  font-weight: bold;
+  width: 100px;
+  border: none;
+  box-sizing: border-box;
+  height: 45px;
+  border-radius: 0 45px 45px 0;
+  background-color: lightgreen;
+  border: black solid 1px;
+}
+
+#textInput:focus,
+#submit:focus,
+#submit:active {
+  outline: none;
+}
+
+#submit:hover {
+  background-color: rgba(46, 240, 46, 0.8);
+}
+
+#textInput:focus {
+  background-color: white;
+}
+
 .gridContainer {
   display: grid;
-  grid-template-columns: auto auto auto;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
   grid-gap: 10px;
 }
 
 .gridItem {
+  box-sizing: border-box;
   padding: 10px;
-  border: black 1px solid;
+  border: rgba(255, 255, 255) 1px solid;
+  text-align: center;
+  background-color: lightgreen;
+  border-radius: 5px;
+  -webkit-transition: background-color 0.25s ease-out;
+  -moz-transition: background-color 0.25s ease-out;
+  -o-transition: background-color 0.25s ease-out;
+  transition: background-color 0.25s ease-out;
+}
+
+.gridItem:hover {
+  background-color: rgba(46, 240, 46, 0.8);
+  border: green 1px solid;
+}
+
+button {
+  cursor: pointer;
+  font-family: "Poppins", sans-serif;
+  background-color: whitesmoke;
+  border: none;
+  border-radius: 5px;
+  -webkit-transition: background-color 0.25s ease-out;
+  -moz-transition: background-color 0.25s ease-out;
+  -o-transition: background-color 0.25s ease-out;
+  transition: background-color 0.25s ease-out;
+}
+
+button:hover {
+  background-color: rgba(94, 204, 241, 0.781);
+}
+
+@media screen and (max-width: 1450px) {
+  .gridContainer {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 10px;
+  }
+}
+
+@media screen and (max-width: 920px) {
+  .gridContainer {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 10px;
+  }
+}
+
+@media screen and (max-width: 650px) {
+  .gridContainer {
+    display: grid;
+    grid-template-columns: auto;
+    grid-gap: 10px;
+  }
+}
+
+@media screen and (max-width: 369px) {
+  #submit {
+    border-radius: 45px;
+  }
+
+  #textInput {
+    border-radius: 45px;
+  }
 }
