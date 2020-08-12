@@ -3,11 +3,22 @@ body {
   font-family: "Poppins", sans-serif;
 }
 
-.icons{
+.icons {
   display: flex;
-  align-items: center
+  align-items: center;
 }
 
-.icons h4{
-  margin:15px
+.icons h4 {
+  margin: 15px;
+}
+
+.gridContainer {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  grid-gap: 10px;
+}
+
+.gridItem {
+  padding: 10px;
+  border: black 1px solid;
 }
