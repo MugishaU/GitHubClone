@@ -49,11 +49,11 @@ class App extends React.Component {
             <input id="submit" type="submit" value="SUBMIT"></input>
           </form>
 
-          <h2>Username: {this.state.username}</h2>
+          {this.state.username && <h2>Username: {this.state.username}</h2>}
         </header>
         {this.state.userData.length > 0 && (
           <>
-            <div id="data">
+            <div className="data">
               <h2>Repositories ({this.state.userData.length})</h2>
               <div className="gridContainer">
                 {this.state.userData.map((item, idx) => {
@@ -86,7 +86,6 @@ class App extends React.Component {
                         target="_blank"
                         href={`https://github.com/${this.state.username}/${item.name}`}
                       >
-                        {/* <button>Go to Repo</button> */}
                         <i class="fas fa-external-link-square-alt fa-3x"></i>
                       </a>
                     </div>
@@ -98,9 +97,11 @@ class App extends React.Component {
         )}
 
         {this.state.username.length > 0 && this.state.userData.length == 0 && (
-          <h2 id="notFound">
-            GitHub User "{this.state.username}" does not exist!
-          </h2>
+          <div className="data">
+            <h2 id="notFound">
+              GitHub User "{this.state.username}" does not exist!
+            </h2>
+          </div>
         )}
       </>
     );

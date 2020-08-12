@@ -105,14 +105,14 @@ button:hover {
 }
 
 .gridItem:hover a i {
-  color: red;
+  color: whitesmoke;
 }
 
 .gridItem:hover a i:hover {
   color: blue;
 }
 
-#data {
+.data {
   padding: 0.5px 10px 10px 10px;
   border-radius: 1px;
   background-color: whitesmoke;
