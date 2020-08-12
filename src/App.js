@@ -54,7 +54,7 @@ class App extends React.Component {
         {this.state.userData.length > 0 && (
           <>
             <div id="data">
-              <h2>Repositories</h2>
+              <h2>Repositories ({this.state.userData.length})</h2>
               <div className="gridContainer">
                 {this.state.userData.map((item, idx) => {
                   return (
@@ -64,29 +64,30 @@ class App extends React.Component {
                       </h2>
                       <div className="icons">
                         <h4>
-                          <span>
-                            <i className="far fa-star fa-lg"></i>
-                          </span>{" "}
+                          <span title="Stargazers">
+                            <i className="fas fa-star fa-lg"></i>
+                          </span>
                           {item.stargazers}
                         </h4>
                         <h4>
-                          <span>
-                            <i className="fas fa-exclamation-circle fa-lg"></i>
-                          </span>{" "}
-                          {item.issues}
+                          <span title="Forks">
+                            <i className="fas fa-code-branch fa-lg"></i>
+                          </span>
+                          {item.forks}
                         </h4>
                         <h4>
-                          <span>
-                            <i className="fas fa-code-branch fa-lg"></i>
-                          </span>{" "}
-                          {item.forks}
+                          <span title="Issues">
+                            <i className="fas fa-exclamation-circle fa-lg"></i>
+                          </span>
+                          {item.issues}
                         </h4>
                       </div>
                       <a
                         target="_blank"
                         href={`https://github.com/${this.state.username}/${item.name}`}
                       >
-                        <button>Go to Repo</button>
+                        {/* <button>Go to Repo</button> */}
+                        <i class="fas fa-external-link-square-alt fa-3x"></i>
                       </a>
                     </div>
                   );

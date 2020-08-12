@@ -31,7 +31,6 @@ header,
   border-radius: 45px 0 0 45px;
   background-color: whitesmoke;
   padding-left: 20px;
-  border: black solid 1px;
 }
 
 #submit {
@@ -45,7 +44,10 @@ header,
   height: 45px;
   border-radius: 0 45px 45px 0;
   background-color: lightgreen;
-  border: black solid 1px;
+  -webkit-transition: background-color 0.25s ease-out;
+  -moz-transition: background-color 0.25s ease-out;
+  -o-transition: background-color 0.25s ease-out;
+  transition: background-color 0.25s ease-out;
 }
 
 #textInput:focus,
@@ -56,10 +58,6 @@ header,
 
 #submit:hover {
   background-color: rgba(46, 240, 46, 0.8);
-}
-
-#textInput:focus {
-  background-color: white;
 }
 
 .gridContainer {
@@ -100,6 +98,24 @@ button {
 
 button:hover {
   background-color: rgba(94, 204, 241, 0.781);
+}
+
+.gridItem a i {
+  color: black;
+}
+
+.gridItem:hover a i {
+  color: red;
+}
+
+.gridItem:hover a i:hover {
+  color: blue;
+}
+
+#data {
+  padding: 0.5px 10px 10px 10px;
+  border-radius: 1px;
+  background-color: whitesmoke;
 }
 
 @media screen and (max-width: 1450px) {
