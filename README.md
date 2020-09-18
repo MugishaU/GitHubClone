@@ -20,3 +20,4 @@ A small app that fetches repos from a searched GitHub user.
 
 ### Known Bugs
 - Not optimized for mobile/ narrower screens
+- While a repo is loading from API, app displays '<user> doesn't exist' regardless of existence
