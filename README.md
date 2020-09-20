@@ -2,7 +2,7 @@
 
 ## Description
 
-A small app that fetches repos from a searched GitHub user.
+A small app that fetches repos from a searched GitHub user and displays each repo name along with the fork, stargazer and issues count.
 
 ## Run Instructions
 
