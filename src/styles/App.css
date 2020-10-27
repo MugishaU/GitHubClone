@@ -22,6 +22,10 @@ header,
     margin: 15px;
 }
 
+#repoName {
+    overflow-wrap: break-word;
+}
+
 #textInput {
     font-family: "Poppins", sans-serif;
     font-size: 20px;
@@ -121,46 +125,6 @@ button:hover {
     border-radius: 1px;
     background-color: whitesmoke;
 }
-
-/* @media screen and (max-width: 650px) {
-    .gridContainer {
-        display: grid;
-        grid-template-columns: 1fr;
-        grid-gap: 10px;
-    }
-}
-
-@media screen and (max-width: 920px) {
-    .gridContainer {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        grid-gap: 10px;
-    }
-}
-
-@media screen and (max-width: 1450px) {
-    .gridContainer {
-        display: grid;
-        grid-template-columns: 1fr 1fr 1fr;
-        grid-gap: 10px;
-    }
-} */
-
-/* @media screen and (max-width: 920px) {
-    .gridContainer {
-        display: grid;
-        grid-template-columns: 50% 50%;
-        grid-gap: 10px;
-    }
-}
-
-@media screen and (max-width: 650px) {
-    .gridContainer {
-        display: grid;
-        grid-template-columns: auto;
-        grid-gap: 10px;
-    }
-} */
 
 @media screen and (max-width: 369px) {
     #submit {

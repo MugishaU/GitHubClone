@@ -2,10 +2,16 @@ import React from "react";
 import "./styles/App.css";
 
 class App extends React.Component {
-    state = { typing: "", username: "", userData: [] };
+    state = {
+        typing: "",
+        username: "",
+        userData: [],
+    };
+
     handleChange = (event) => {
         this.setState({ typing: event.target.value });
     };
+
     handleSubmit = (event) => {
         event.preventDefault();
         this.setState({ username: this.state.typing }, () => {
@@ -62,9 +68,10 @@ class App extends React.Component {
                                 {this.state.userData.map((item, idx) => {
                                     return (
                                         <div className="gridItem" key={idx}>
-                                            <h2>
+                                            <h2 id="repoName">
                                                 {idx + 1}: {item.name}
                                             </h2>
+
                                             <div className="icons">
                                                 <h4>
                                                     <span title="Stargazers">
@@ -85,6 +92,7 @@ class App extends React.Component {
                                                     {item.issues}
                                                 </h4>
                                             </div>
+
                                             <a
                                                 target="_blank"
                                                 href={`https://github.com/${this.state.username}/${item.name}`}
