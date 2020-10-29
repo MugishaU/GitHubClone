@@ -6,6 +6,7 @@ class App extends React.Component {
         typing: "",
         username: "",
         userData: [],
+        error: "",
     };
 
     handleChange = (event) => {
@@ -30,10 +31,16 @@ class App extends React.Component {
                         dataObj.issues = repo.open_issues_count;
                         allData.push(dataObj);
                     }
-                    this.setState({ userData: allData });
+                    this.setState({
+                        userData: allData,
+                        error: "",
+                    });
                 })
                 .catch((err) => {
-                    this.setState({ userData: [] });
+                    this.setState({
+                        userData: [],
+                        error: "No user",
+                    });
                     console.warn("Oh dear...", err);
                 });
         });
@@ -69,23 +76,25 @@ class App extends React.Component {
                                     return (
                                         <div className="gridItem" key={idx}>
                                             <h2 id="repoName">
-                                                {idx + 1}: {item.name}
+                                                {idx + 1}
+                                                <br />
+                                                {item.name}
                                             </h2>
 
                                             <div className="icons">
-                                                <h4>
+                                                <h4 id="stargazersTitle">
                                                     <span title="Stargazers">
                                                         <i className="fas fa-star fa-lg"></i>
                                                     </span>
                                                     {item.stargazers}
                                                 </h4>
-                                                <h4>
+                                                <h4 id="forksTitle">
                                                     <span title="Forks">
                                                         <i className="fas fa-code-branch fa-lg"></i>
                                                     </span>
                                                     {item.forks}
                                                 </h4>
-                                                <h4>
+                                                <h4 id="issuesTitle">
                                                     <span title="Issues">
                                                         <i className="fas fa-exclamation-circle fa-lg"></i>
                                                     </span>
@@ -97,7 +106,7 @@ class App extends React.Component {
                                                 target="_blank"
                                                 href={`https://github.com/${this.state.username}/${item.name}`}
                                             >
-                                                <i class="fas fa-external-link-square-alt fa-3x"></i>
+                                                <i className="fas fa-external-link-square-alt fa-2x"></i>
                                             </a>
                                         </div>
                                     );
@@ -108,7 +117,8 @@ class App extends React.Component {
                 )}
 
                 {this.state.username.length > 0 &&
-                    this.state.userData.length == 0 && (
+                    this.state.userData.length == 0 &&
+                    this.state.error.length > 0 && (
                         <div className="data">
                             <h2 id="notFound">
                                 GitHub User "{this.state.username}" does not
