@@ -72,6 +72,9 @@ header,
 
 .gridItem {
     box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     padding: 10px;
     border: rgba(255, 255, 255) 1px solid;
     text-align: center;
@@ -124,6 +127,18 @@ button:hover {
     padding: 0.5px 10px 10px 10px;
     border-radius: 1px;
     background-color: whitesmoke;
+}
+
+#forksTitle {
+    color: #78bfec;
+}
+
+#stargazersTitle {
+    color: #fff49a;
+}
+
+#issuesTitle {
+    color: #fe654f;
 }
 
 @media screen and (max-width: 369px) {
