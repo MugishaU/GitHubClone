@@ -22,6 +22,10 @@ header,
     margin: 15px;
 }
 
+#repoName {
+    overflow-wrap: break-word;
+}
+
 #textInput {
     font-family: "Poppins", sans-serif;
     font-size: 20px;
@@ -68,6 +72,9 @@ header,
 
 .gridItem {
     box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     padding: 10px;
     border: rgba(255, 255, 255) 1px solid;
     text-align: center;
@@ -122,45 +129,17 @@ button:hover {
     background-color: whitesmoke;
 }
 
-/* @media screen and (max-width: 650px) {
-    .gridContainer {
-        display: grid;
-        grid-template-columns: 1fr;
-        grid-gap: 10px;
-    }
+#forksTitle {
+    color: #78bfec;
 }
 
-@media screen and (max-width: 920px) {
-    .gridContainer {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        grid-gap: 10px;
-    }
+#stargazersTitle {
+    color: #fff49a;
 }
 
-@media screen and (max-width: 1450px) {
-    .gridContainer {
-        display: grid;
-        grid-template-columns: 1fr 1fr 1fr;
-        grid-gap: 10px;
-    }
-} */
-
-/* @media screen and (max-width: 920px) {
-    .gridContainer {
-        display: grid;
-        grid-template-columns: 50% 50%;
-        grid-gap: 10px;
-    }
+#issuesTitle {
+    color: #fe654f;
 }
-
-@media screen and (max-width: 650px) {
-    .gridContainer {
-        display: grid;
-        grid-template-columns: auto;
-        grid-gap: 10px;
-    }
-} */
 
 @media screen and (max-width: 369px) {
     #submit {
